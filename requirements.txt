@@ -1,0 +1,18 @@
+#Utilitites
+numpy
+pandas
+
+# FACE RECOGNITION
+scikit-learn
+dlib-bin   # for square on face 
+git+https://github.com/ageitgey/face_recognition_models  # for FACE RECOGNITION with the help of embeddings
+setuptools<70.0.0  #used for runing the above github code 
+
+
+supabase  
+bcrypt  # for hashing password
+ 
+segno  # for qr code generation
+pillow # help in image preproccesing in pthon like resize, flip etc
+
+streamlit
