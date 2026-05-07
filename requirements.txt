@@ -1,4 +1,6 @@
+streamlit
 #Utilitites
+
 numpy
 pandas
 
@@ -15,4 +17,6 @@ bcrypt  # for hashing password
 segno  # for qr code generation
 pillow # help in image preproccesing in pthon like resize, flip etc
 
-streamlit
+
+librosa
+resemblyzer
