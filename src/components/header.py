@@ -6,14 +6,14 @@ def get_base64(img_path):
         data = base64.b64encode(f.read()).decode()
     return data
 
-img = get_base64("src/assets/logo.png")
+img = get_base64("src/assets/logo2.png")
 
 def header_home():
     
     st.markdown(f"""
-        <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; margin-bottom:30px;">
-            <img src='data:image/png;base64,{img}'  style="height:160px">
-            <h1 style='text-align:center; color:#FFFFFF ; margin-top:-28px; margin-right:-15px'>AttendX</h1>
+        <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; margin-bottom:30px;margin-top:-30px;">
+            <img src='data:image/png;base64,{img}'  style="height:180px">
+            <h1 style='text-align:center; color:#FFFFFF ; margin-top:-25px; margin-right:-15px'>AttendX</h1>
         </div>   
                 
                 """, unsafe_allow_html=True)
