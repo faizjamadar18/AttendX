@@ -10,6 +10,8 @@ import base64
 def home_screen():
 
     style_background_home()
+    st.space()
+    st.space()
     header_home()
     style_base_layout()
 
@@ -26,11 +28,11 @@ def home_screen():
 
     with col1:
         st.header("I'm Student")
-        st.markdown(f"""
-            <div style='text-align:center ; margin-top: -20px'>
-                <img src='data:image/png;base64,{img1}' width='140'>
-            </div>
-        """, unsafe_allow_html=True)
+        # st.markdown(f"""
+        #     <div style='text-align:center ; margin-top: -20px'>
+        #         <img src='data:image/png;base64,{img1}' width='140'>
+        #     </div>
+        # """, unsafe_allow_html=True)
 
         if st.button('Student Portal', type='tertiary', icon=':material/arrow_outward:', icon_position='right', width='stretch'):
             st.session_state['login_type']='student'
@@ -39,11 +41,11 @@ def home_screen():
     with col2:
         st.header("I'm Teacher")
         # st.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiHTVbfy1g-s8lXUdZy7h9ToPpZC4DaRDp2w&s", width=145)
-        st.markdown(f"""
-            <div style='text-align:center; margin-top: -20px'>
-                <img src='data:image/png;base64,{img2}' width='140'>
-            </div>
-        """, unsafe_allow_html=True)
+        # st.markdown(f"""
+        #     <div style='text-align:center; margin-top: -20px'>
+        #         <img src='data:image/png;base64,{img2}' width='140'>
+        #     </div>
+        # """, unsafe_allow_html=True)
         if st.button('Teacher Portal', type='tertiary', icon=':material/arrow_outward:', icon_position='right', width='stretch'):
             st.session_state['login_type']='teacher'
             st.rerun()

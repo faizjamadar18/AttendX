@@ -48,19 +48,19 @@ def teacher_dashboard():
 
     tab1, tab2, tab3 = st.columns(3) 
     with tab1 : 
-        type1 = 'primary' if st.session_state.current_teacher_tab == 'take_attendence' else 'tertiary' 
+        type1 = 'primary' if st.session_state.current_teacher_tab == 'take_attendence' else 'secondary' 
         if st.button("Take Attendence", type=type1, width='stretch', icon=':material/ar_on_you:'):
             st.session_state.current_teacher_tab = 'take_attendence'
             st.rerun()
 
     with tab2 :
-        type2 = 'primary' if st.session_state.current_teacher_tab == 'manage_subjects' else 'tertiary'
+        type2 = 'primary' if st.session_state.current_teacher_tab == 'manage_subjects' else 'secondary'
         if st.button("Manage Subject", type=type2, width='stretch', icon=':material/book_ribbon:'):
             st.session_state.current_teacher_tab = 'manage_subjects'
             st.rerun()
 
     with tab3 :
-        type3 = 'primary' if st.session_state.current_teacher_tab == 'attendence_records' else 'tertiary'
+        type3 = 'primary' if st.session_state.current_teacher_tab == 'attendence_records' else 'secondary'
         if st.button("Attendence Records", type=type3, width='stretch', icon=':material/cards_stack:'): 
             st.session_state.current_teacher_tab = 'attendence_records'
             st.rerun()
@@ -139,7 +139,7 @@ def teacher_tab_take_attendance():
         selected_subject_label = st.selectbox("Select Subject", options=list(subject_options.keys()))
 
     with col2:
-        if st.button("Add photos", type="primary", width='stretch', icon=":material/photo_prints:"):
+        if st.button("Add photos", type="tertiary", width='stretch', icon=":material/photo_prints:"):
             add_photo_dialog()
 
     selected_subject_id = subject_options[selected_subject_label]
@@ -162,7 +162,7 @@ def teacher_tab_take_attendance():
             st.session_state.attendence_images = []
             st.rerun()
     with c2: 
-        if st.button("Run Face Analytics", type='secondary',width='stretch', icon=":material/analytics:", disabled=not has_photos):
+        if st.button("Run Face Analytics", type='primary',width='stretch', icon=":material/analytics:", disabled=not has_photos):
             all_detected_ids = {}
             for i, img in enumerate(st.session_state.attendence_images):
                 img_np = np.array(img.convert("RGB"))
@@ -350,7 +350,7 @@ def teacher_screen_login():
 
     btnc1, btnc2 = st.columns(2)
     with btnc1: 
-        if st.button("Login", type="secondary",icon=':material/passkey:', width="stretch"):
+        if st.button("Login", type="primary",icon=':material/passkey:', width="stretch"):
             if teacher_login(teacher_username, teacher_pass):
                 st.toast("Welcome Back", icon="👋")
                 import time 
@@ -359,7 +359,7 @@ def teacher_screen_login():
             else:
                 st.error("Invalid Username or password")
     with btnc2: 
-        if st.button("Register instead", type="primary", width="stretch", icon=':material/passkey:'):
+        if st.button("Register instead", type="secondary", width="stretch", icon=':material/passkey:'):
             st.session_state.teacher_login_type = "register"
             st.rerun()
 
